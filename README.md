@@ -3,4 +3,4 @@ college project
 
 Created by:
 - Shresth Prasad
-- Rishab
+- Rishabh kumar
