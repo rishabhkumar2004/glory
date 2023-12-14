@@ -4,7 +4,7 @@ from app.models.skills import CreateSkill, SkillInDB, UpdateSkill
 CREATE_SKILLS_QUERY = """
     INSERT INTO skills (name, contact_info, test_data)
     VALUES (:name, :contact_info, :test_data)
-    RETURNING id, name, description, price, cleanings_type
+    RETURNING id, name, contact_info, test_data
 """
 
 class SkillsRepository(BaseRepository):
@@ -12,7 +12,7 @@ class SkillsRepository(BaseRepository):
     All database actions associated with the Cleanings resource
     """
     
-    async def create_cleanings(self, *, new_skill: CreateSkill) -> SkillInDB:
+    async def create_skills(self, *, new_skill: CreateSkill) -> SkillInDB:
         query_values = new_skill.dict()
         skill = await self.db.fetch_one(query=CREATE_SKILLS_QUERY, values=query_values)
 

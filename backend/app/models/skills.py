@@ -16,11 +16,11 @@ class UpdateSkill(SkillBase):
     contact_info: str
     test_data: int
 
-class SkillInDB(SkillBase):
+class SkillInDB(IDModelMixin, SkillBase):
     name: str
     contact_info: str
     test_data: int
 
 class SkillPublic(IDModelMixin, SkillBase):
-    pass
+    ...
 
