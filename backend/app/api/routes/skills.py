@@ -4,7 +4,7 @@ from fastapi import APIRouter, Body, Depends
 from starlette.status import HTTP_201_CREATED
 
 from app.models.skills import CreateSkill, SkillPublic
-from app.db.repositories.cleanings import CleaningsRepository
+from app.db.repositories.skills import SkillsRepository
 from app.api.dependencies.database import get_repository
 
 
@@ -22,7 +22,7 @@ async def get_all_skills() -> List[dict]:
 @router.post("/", response_model=SkillPublic, name="cleanings:create-cleaning", status_code=HTTP_201_CREATED)
 async def create_new_skill(
     new_cleaning: CreateSkill = Body(..., embed=True),
-    cleanings_repo: CleaningsRepository = Depends(get_repository(CleaningsRepository))
+    cleanings_repo: SkillsRepository = Depends(get_repository(SkillsRepository))
     ) -> SkillPublic:
     create_cleaning = await cleanings_repo.create_cleanings(new_cleaning=new_cleaning)
     return create_cleaning
