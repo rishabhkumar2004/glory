@@ -3,7 +3,7 @@ from typing import List
 from fastapi import APIRouter, Body, Depends
 from starlette.status import HTTP_201_CREATED
 
-from app.models.cleanings import CleaningCreate, CleaningPublic
+from app.models.skills import CreateSkill, SkillPublic
 from app.db.repositories.cleanings import CleaningsRepository
 from app.api.dependencies.database import get_repository
 
@@ -19,11 +19,11 @@ async def get_all_skills() -> List[dict]:
 
     return skills
 
-@router.post("/", response_model=CleaningPublic, name="cleanings:create-cleaning", status_code=HTTP_201_CREATED)
-async def create_new_cleaning(
-    new_cleaning: CleaningCreate = Body(..., embed=True),
+@router.post("/", response_model=SkillPublic, name="cleanings:create-cleaning", status_code=HTTP_201_CREATED)
+async def create_new_skill(
+    new_cleaning: CreateSkill = Body(..., embed=True),
     cleanings_repo: CleaningsRepository = Depends(get_repository(CleaningsRepository))
-    ) -> CleaningPublic:
+    ) -> SkillPublic:
     create_cleaning = await cleanings_repo.create_cleanings(new_cleaning=new_cleaning)
     return create_cleaning
 
