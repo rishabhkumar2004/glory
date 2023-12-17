@@ -4,8 +4,8 @@ Eventually down the line a feature to auto-generate a resume will be added.
 
 ## Screenshots
 <div style="display: grid">
-    <img src=./screenshots/login.jpeg.jpeg>
-    <img src=./screenshots/profile.jpeg.jpeg>
+    <img src=./screenshots/login.jpeg>
+    <img src=./screenshots/profile.jpeg>
     <img src=./screenshots/home.jpeg>
 </div>
 
