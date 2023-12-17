@@ -2,25 +2,25 @@ from typing import Optional
 
 from app.models.core import CoreModel, IDModelMixin
 
-class SkillBase(CoreModel):
+class StudentInfoBase(CoreModel):
     name: Optional[str]
-    contact_info: Optional[str]
-    test_data: Optional[int] = 0
+    college: Optional[str]
+    year: Optional[int] = 1
 
-class CreateSkill(SkillBase):
+class CreateStudent(StudentInfoBase):
     name: str
-    contact_info: str
-    test_data: int
+    college: str
+    year: int
 
-class UpdateSkill(SkillBase):
-    contact_info: str
-    test_data: int
+class UpdateStudent(StudentInfoBase):
+    college: str
+    year: int
 
-class SkillInDB(IDModelMixin, SkillBase):
+class StudentInDB(IDModelMixin, StudentInfoBase):
     name: str
-    contact_info: str
-    test_data: int
+    college: str
+    year: int
 
-class SkillPublic(IDModelMixin, SkillBase):
+class StudentInfoPublic(IDModelMixin, StudentInfoBase):
     ...
 
