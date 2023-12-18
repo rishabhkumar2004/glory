@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from app.api.routes.skills import router as skills_router
+from app.api.routes.students import router as skills_router
 
 
 router = APIRouter()

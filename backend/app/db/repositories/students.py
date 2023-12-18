@@ -1,5 +1,5 @@
 from app.db.repositories.base import BaseRepository
-from app.models.skills import CreateStudent, StudentInDB, UpdateStudent 
+from app.models.students import CreateStudent, StudentInDB, UpdateStudent 
 
 CREATE_SKILLS_QUERY = """
     INSERT INTO students (name, college, year)

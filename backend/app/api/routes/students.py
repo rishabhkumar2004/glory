@@ -3,8 +3,8 @@ from typing import List
 from fastapi import APIRouter, Body, Depends, HTTPException
 from starlette.status import HTTP_201_CREATED, HTTP_404_NOT_FOUND
 
-from app.models.skills import CreateStudent, StudentInfoPublic
-from app.db.repositories.skills import StudentsRepository
+from app.models.students import CreateStudent, StudentInfoPublic
+from app.db.repositories.students import StudentsRepository
 from app.api.dependencies.database import get_repository
 
 
