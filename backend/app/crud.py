@@ -11,7 +11,7 @@ def create_user(*, db: Session, user: users.UserCreate):
     db_user = models.Users(username=user.username, email=user.email, password=hashed_password)
     db.add(db_user)
     db.commit()
-    db.refresh()
+    db.refresh(db_user)
     return db_user
 
 def get_user_by_username(*, db: Session, username: str):
