@@ -1,0 +1,23 @@
+from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy.orm import relationship
+
+from core.connection import Base
+
+class Users(Base):
+    __tablename__ = "users"
+    id = Column(Integer, primary_key=True)
+    email = Column(String, primary_key=True, index=True)
+    password = Column(String)
+
+    skills = relationship("Skills", back_populates="user")
+
+class Skills(Base):
+    __tablename__ = "skills"
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey("users.id"))
+    title = Column(String, index=True)
+    description = Column(String, default=None)
+
+    user = relationship("Users", back_populates="skills")
+
+
