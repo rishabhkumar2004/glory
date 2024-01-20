@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from .models import Base
+from .connection import engine
 from .routers import users, skills
 from . import config
 
@@ -19,6 +21,8 @@ def get_application():
 
     return app
 
+# Create all the tables
+Base.metadata.create_all(bind=engine)
 
 app = get_application()
 

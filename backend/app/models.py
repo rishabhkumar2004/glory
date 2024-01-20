@@ -21,4 +21,3 @@ class Skills(Base):
 
     user = relationship("Users", back_populates="skills")
 
-
