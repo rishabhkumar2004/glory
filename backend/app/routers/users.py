@@ -1,12 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from connection import engine
 from ..schema import skills, users
+from ..config import DATABASE_URL
 from ..dependencies import get_db
 from .. import models, crud
 
-models.Base.metadata.create_all(bind=engine)
 router = APIRouter()
 
 @router.post("/users/", response_model=users.UserPublic, tags=["users"])

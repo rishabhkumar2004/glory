@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from skills import SkillPublic
+from .skills import SkillPublic
 
 class UserBase(BaseModel):
     username: str

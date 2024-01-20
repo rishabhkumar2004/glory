@@ -2,7 +2,7 @@ from pydantic import BaseModel
 
 class SkillBase(BaseModel):
     title: str
-    description: str | None = None
+    description: str
 
 class SkillCreate(SkillBase):
     ...

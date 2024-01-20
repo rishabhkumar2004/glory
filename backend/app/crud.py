@@ -2,7 +2,7 @@ from sqlalchemy.orm import Session
 from argon2 import PasswordHasher
 
 from . import models
-from schema import users, skills
+from .schema import users, skills
 
 hasher = PasswordHasher()
 
