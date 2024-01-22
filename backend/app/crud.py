@@ -1,6 +1,6 @@
-from operator import mod
 from sqlalchemy.orm import Session
 from argon2 import PasswordHasher
+from sqlalchemy.sql.functions import mode
 
 from . import models
 from .schema import users, skills
@@ -23,8 +23,16 @@ def create_user_skill(*, db: Session, skill: skills.SkillCreate, user_id: int):
     return db_skill
 
 def get_user_by_username(*, db: Session, username: str):
-    return db.query(models.Users).filter(username == models.Users.username).first()
+    return db.query(models.Users).filter(models.Users.username == username).first()
 
 def get_user_by_email(*, db: Session, email: str):
-    return db.query(models.Users).filter(email == models.Users.email).first()
+    return db.query(models.Users).filter(models.Users.email == email).first()
+
+def get_user_by_id(*, db: Session, user_id: int):
+    return db.query(models.Users).filter(models.Users.id == user_id).first()
+
+def get_user_id(*, db: Session, username: str):
+    user = db.query(models.Users).filter(models.Users).filter_by(username = username).first()
+    user_id: int = user.__dict__["id"]
+    return user_id
 

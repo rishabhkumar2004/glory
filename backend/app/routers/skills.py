@@ -8,6 +8,18 @@ from .. import crud
 router = APIRouter()
 
 @router.post("/users/{user_id}/skills/", response_model=skills.SkillPublic, tags=["skills"])
-def create_skill_for_user(user_id: int, skill: skills.SkillCreate, db: Session = Depends(get_db)):
-    return crud.create_user_skill(db=db, skill=skill, user_id=user_id)
+def create_skill_for_user_using_id(user_id: int, skill: skills.SkillCreate, db: Session = Depends(get_db)):
+    user_exists = crud.get_user_by_id(db=db, user_id=user_id)
+    if user_exists:
+        return crud.create_user_skill(db=db, skill=skill, user_id=user_id)
+    else:
+        raise HTTPException(status_code=400, detail="User does not exist")
+
+@router.post("/users/{user_name}/skills/", response_model=skills.SkillPublic, tags=["skills"])
+def create_skill_for_user_using_username(user_name: str, skill: skills.SkillCreate, db: Session = Depends(get_db)):
+    user_exists = crud.get_user_by_username(db=db, username=user_name)
+    if user_exists:
+        return crud.create_user_skill(db=db, skill=skill, user_id=user_exists.__dict__["id"])
+    else:
+        raise HTTPException(status_code=400, detail="User does not exist")
 
