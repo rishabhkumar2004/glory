@@ -1,14 +1,14 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from ..schema import users, skills
+from app.schema.users import UserPublic, UserCreate
 from ..dependencies import get_db
 from .. import crud
 
 router = APIRouter()
 
-@router.post("/users/", response_model=users.UserPublic, tags=["users"])
-def create_user(user: users.UserCreate, db: Session = Depends(get_db)):
+@router.post("/users/", response_model=UserPublic, tags=["users"])
+def create_user(user: UserCreate, db: Session = Depends(get_db)):
     email_in_use = crud.get_user_by_email(db=db, email=user.email)
     username_in_use = crud.get_user_by_username(db=db, username=user.username)
     if email_in_use:
