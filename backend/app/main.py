@@ -7,6 +7,9 @@ from .routers import users, skills
 from . import config
 
 def get_application():
+    # Create all the tables
+    Base.metadata.create_all(bind=engine)
+
     app = FastAPI(title=config.PROJECT_NAME, version=config.VERSION)
 
     app.add_middleware(
@@ -18,11 +21,10 @@ def get_application():
     )
 
     app.include_router(users.router)
+    app.include_router(skills.router)
 
     return app
 
-# Create all the tables
-Base.metadata.create_all(bind=engine)
 
 app = get_application()
 
