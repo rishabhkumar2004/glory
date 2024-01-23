@@ -15,8 +15,8 @@ def create_user(*, db: Session, user: users.UserCreate):
     db.refresh(db_user)
     return db_user
 
-def create_user_skill(*, db: Session, skill: skills.SkillCreate, user_id: int):
-    db_skill = models.Skills(**skill.model_dump(), user_id=user_id)
+def create_user_skill(*, db: Session, skill: skills.SkillCreate, user_id: int, cert_image_path: str = None):
+    db_skill = models.Skills(**skill.model_dump(), user_id=user_id, certificate_image_path=cert_image_path)
     db.add(db_skill)
     db.commit()
     db.refresh(db_skill)

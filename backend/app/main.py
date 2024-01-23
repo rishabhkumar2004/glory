@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from pathlib import Path
 
 from .models import Base
 from .connection import engine
@@ -11,6 +13,9 @@ def get_application():
     Base.metadata.create_all(bind=engine)
 
     app = FastAPI(title=config.PROJECT_NAME, version=config.VERSION)
+
+    # mount 'static' directory to store static files
+    app.mount("/../static", StaticFiles(directory="static"), name="static")
 
     app.add_middleware(
         CORSMiddleware,
