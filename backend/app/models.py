@@ -18,6 +18,17 @@ class Skills(Base):
     user_id = Column(Integer, ForeignKey("users.id"))
     title = Column(String, index=True)
     description = Column(String, default=None)
+    certificate_image_path = Column(String, default=None)
 
     user = relationship("Users", back_populates="skills")
+    image = relationship("Images", back_populates="skills")
+
+class Images(Base):
+    __tablename__ = "images"
+    id = Column(Integer, primary_key=True)
+    skill_id = Column(Integer, ForeignKey("skills.id"))
+    name = Column(String, index=True)
+    file_path = Column(String)
+
+    skills = relationship("Skills", back_populates="image")
 
