@@ -1,6 +1,5 @@
 from sqlalchemy.orm import Session
 from argon2 import PasswordHasher
-from sqlalchemy.sql.functions import mode
 
 from . import models
 from .schema import users, skills
