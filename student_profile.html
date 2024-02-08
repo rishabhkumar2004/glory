@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="student_profile.css">
+    <title>College Student Profile</title>
+</head>
+<body>
+    <header >
+        <img src="trophy1.avif" alt="Title Image" id="title-image" width="100px">
+        <img src="glory1.png" alt="Title Image" width="270" margin="0px">
+        <nav>
+            <a href="" id="1">HOME</a>
+            <a href="" id="1">REGISTRATION</a>
+            <a href="" id="1">CONTACT</a>
+            <a href="" id="1">ABOUT US</a>
+            <a href="/login.html" target="_blank"><button>LOGIN</button></a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>College Student Profile</h1>
+        <section id="student-info">
+            <div id="profile-pic-container">
+                <img id="profile-pic" src="default-profile-pic.png" alt="Profile Picture">
+                <input type="file" id="profile-pic-input" accept="image/*" onchange="loadProfilePic(event)">
+            </div>
+            <h2>Student Information</h2>
+            <p><strong>Name:</strong> <span id="student-name">John Doe</span></p>
+            <p><strong>College:</strong> <span id="college-name">Sample University</span></p>
+            <p><strong>Year:</strong> <span id="student-year">Sophomore</span></p>
+        </section>
+        <section id="achievements">
+            <h2>Achievements</h2>
+            <ul id="achievement-list">
+                <!-- Achievement items will be dynamically added here -->
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 GLORY. All rights reserved.</p>
+    </footer>
+
+    <script src="student_profile.js"></script>
+</body>
+</html>

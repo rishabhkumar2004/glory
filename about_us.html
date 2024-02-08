@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url(img.jpg);
+            background-size: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            background-color: rgb(35, 19, 19);
+            padding: 10px;
+            color: white;
+        }
+
+        nav {
+            margin-left: auto;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            color: rgb(161, 157, 157);
+        }
+
+        button{
+            font-size: larger;
+            color: white;
+            padding: 15px;
+            background-color: rgb(35, 19, 19);
+            border: 1px solid white;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 15px auto;
+            padding: 15px;
+            text-align: center;
+            color: #ccc;
+            font-size: larger;
+            backdrop-filter: blur(20px);
+        }
+
+        #team-members {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            flex: 1;
+            max-width: 300px;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .team-member:hover {
+            transform: scale(1.05);
+        }
+
+        .team-member img {
+            max-width: 100%;
+            border-radius: 50%;
+        }
+
+        #project-details {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        #project-details h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+
+        footer {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="trophy1.avif" alt="Title Image" id="title-image" width="100px">
+        <img src="glory1.png" alt="Title Image" width="270" margin="0px">
+        <nav>
+            <a href="/home_page_new.html" id="1">HOME</a>
+            <a href="" id="1">REGISTRATION</a>
+            <a href="" id="1">CONTACT</a>
+            <a href="" id="1">ABOUT US</a>
+            <a href="/login_new.html" target="_blank"><button>LOGIN</button></a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>About Us</h1>
+
+        <p>Welcome to our team! Learn more about the awesome individuals who make things happen.</p>
+
+        <div id="team-members">
+            <div class="team-member" id="member1">
+                <h3></h3>
+            </div>
+
+            <div class="team-member" id="member2">
+                <h3></h3>
+            </div>
+        </div>
+
+        <div id="project-details">
+            <h2>Project Details</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores itaque voluptates voluptas eius accusantium molestiae ut ipsum libero ullam ducimus, accusamus commodi, quod illum, ea quae! Sunt atque molestias, deleniti mollitia corrupti libero, quidem quisquam eligendi id explicabo eum numquam, voluptatibus fuga suscipit quia accusamus beatae harum dolor natus. Numquam odio eveniet adipisci inventore omnis dicta velit consequatur, harum possimus qui voluptatem quod, perferendis nihil unde? Velit in quos harum accusamus cupiditate molestias architecto suscipit delectus, laudantium veniam maxime nihil consequuntur ex sit dicta, excepturi sapiente quas ullam! Tempore perspiciatis animi fugit quod quam eos eligendi eveniet ad ea. Incidunt.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 GLORY. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('member1').addEventListener('click', function() {
+            alert('');
+        });
+
+        document.getElementById('member2').addEventListener('click', function() {
+            alert('');
+        });
+    </script>
+
+</body>
+</html>
