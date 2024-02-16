@@ -123,6 +123,7 @@
         }
 
         .achievements {
+            color: cyan;
             list-style-type: none;
             padding: 0;
             margin-top: 20px;
@@ -131,6 +132,13 @@
         .achievements li {
             margin-bottom: 8px;
             color: cyan;
+        }
+
+        #project {
+            text-decoration: none;
+            background-color: gray;
+            color: white;
+            cursor: pointer;
         }
 
         footer {
@@ -160,8 +168,8 @@
 
     <main>
         <div class="profile-card" id="profileCard">
-            <img src="profile-image.jpg" alt="Profile Image" title="Profile photo" class="profile-image">
-            <h1 class="name" id="name">Your Name here</h2>
+            <img src="pngtree-generic-man-portrait-placeholder-avatar-png-image_4921174.png" alt="Profile Image" title="Profile photo" class="profile-image">
+            <h1 class="name" id="name">John Doe</h2>
             <h2 class="job-title" id="jobTitle">Web Developer</h2>
             <div class="social-links">
                 <a href="https://www.linkedin.com/" target="_blank" title="Go to LinkedIn" id="icon"><img src="linkedin.png" width="51px"></a>
@@ -171,6 +179,7 @@
             <h2>Achievements</h2>
             <ul class="achievements" id="achievementsList">
                 <li>Project A completion</li>
+                <li id="project"> <a href="https://github.com/Yttrium-32/xonsh"> Project  </a></li>
                 <li>Top Performer Award</li>
                 <li>Published Article in Tech Journal</li>
             </ul>
@@ -192,7 +201,7 @@
 
         setTimeout(() => {
             const profileData = {
-                name: 'Your Name here',
+                name: 'John Doe',
                 jobTitle: 'Web Developer',
                 linkedin: 'https://www.linkedin.com/',
                 twitter: 'https://twitter.com/',

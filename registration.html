@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            background: url(./img.jpg)no-repeat;
+            background-position: center;
+            background-size: cover;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white
+            ;
+        }
+
+        .container{
+            width: 400px;
+            height: 500px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            border-radius: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+        }
+
+        h2{
+            color: #ffff;
+            font-size: 2em;
+            text-transform: uppercase;
+            padding: 20px 0;
+        }
+
+        p
+        {
+            text-align: center;
+            color: #fff;
+            margin: 10px 0;
+        }
+
+        p>a
+        {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        p>a:hover
+        {
+            text-decoration: underline;
+            font-style: italic;
+        }
+
+        .container {
+        width: 500px;
+        margin: 0 auto;
+        }
+
+        h1 {
+        text-align: center;
+        }
+
+        form {
+        margin-top: 20px;
+        }
+
+        label {
+        width: 100%;
+        display: block;
+        }
+
+        input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+        background-color: #000;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        }
+
+        @media (max-width: 500px) {
+        .container {
+            width: 100%;
+        }
+        }
+
+        button{
+            width: 100%;
+            height: 50px;
+            border-radius: 40px;
+            border: none;
+            font-size: 1.5em;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+
+        #button:hover
+        {
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+        }
+    </style>
+    <link rel="stylesheet" href="login.css">
+    <script src="registration.js" defer></script>
+    <script src="https://kit.fontawesome.com/97ebdf5864.js" crossorigin="anonymous"></script>
+</head>
+<body>
+     
+    <div class="container">
+        <h2>REGISTER</h2>
+
+        <form action="#" id="registrationForm">
+            <div class="form-group">
+                <input type="email" id="email" required>
+                <label for="email">Email</label>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="form-group">
+                <input type="username" id="username" required>
+                <label for="username">Username</label>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" required>
+                <label for="password">Password</label>
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <input id="btn" type="submit" value="Register">
+            
+        </form>
+    </div>
+
+</body>
+</html>

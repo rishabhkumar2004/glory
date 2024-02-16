@@ -28,8 +28,8 @@ def create_user_skill(*, db: Session, skill: skills.SkillCreate, user_id: int, c
     db.refresh(db_skill)
     return db_skill
 
-def verify_user_login(*, db: Session, username: str, password: str):
-    user = db.query(models.Users).filter(models.Users.username == username).first()
+def verify_user_login(*, db: Session, email: str, password: str):
+    user = db.query(models.Users).filter(models.Users.email == email).first()
     hashed_password = user.password
 
     try:

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLORY | A web-app to track achievements</title>
+    <style>
+                body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url(img.jpg);
+            margin: 0;
+            padding: 0;
+            background-size: center;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            background-color: rgb(35, 19, 19);
+            padding: 10px;
+            color: white;
+        }p
+
+        span {
+            border: 0px solid;
+            position: absolute;
+            box-shadow: 3px 3px 3px;
+            backdrop-filter: blur(15px);
+        }
+
+        nav {
+            margin-left: auto;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            color: rgb(161, 157, 157);
+            cursor: pointer;
+        }
+
+        button{
+            font-size: larger;
+            color: white;
+            padding: 15px;
+            background-color: rgb(35, 19, 19);
+            border: 1px solid white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+
+        main {
+            flex: 1;
+            padding: 50px;
+            text-align: center;
+            position: relative;
+            transition: background-color 0.5s ease;
+        }
+
+        #left-cards {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .card {
+            backdrop-filter: blur(40px);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+            <img src="logo_740x740.png" alt="Title Image" id="title-image" width="100px">
+            <img src="glory1.png" alt="Title Image" width="270" margin="0px">
+            <nav>
+                <a href="/home_page_new.html" id="1">HOME</a>
+                <a href="/registration.html" id="1">REGISTRATION</a>
+                <a href="/about_us.html" id="1">ABOUT US</a>
+                <a href="/login.html" target="_blank"><button>LOGIN</button></a>
+            </nav>
+    </header>
+
+    <main>
+        <div id="card-container"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 GLORY. All rights reser</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Sample data for dynamic cards
+            const desc1 = "A student profiling website offers personalized profiles for students to showcase academic achievements, skills, and career aspirations. It provides educational resources, career guidance, and networking opportunities. Students track academic progress, plan courses, and access event calendars for workshops and seminars. Integrated with institutions, it facilitates seamless communication and administrative tasks. Leveraging data analytics, it offers insights for tailored support. Empowering students to manage their academic and career development, it serves as a centralized hub for learning, networking, and achieving goals.";
+            const desc2 = "The backend of a student profiling site, powered by technologies like Django or Node.js, manages user authentication, data storage, and retrieval through RESTful APIs. It facilitates user registration, profile creation, and personalized content delivery, with algorithms for recommendation systems. Security measures like encryption ensure data privacy, optimizing functionality for seamless navigation and personalized insights.";
+            var sampleData = [
+                { title: "About 1", description: desc1 },
+                { title: "About 2", description: desc2 }
+            ];
+
+            var cardContainer = document.getElementById("card-container");
+
+            // Loop through the sample data and create cards
+            sampleData.forEach(function(item) {
+                var card = document.createElement("div");
+                card.classList.add("card");
+
+                var title = document.createElement("h2");
+                title.textContent = item.title;
+
+                var description = document.createElement("p");
+                description.textContent = item.description;
+
+                card.appendChild(title);
+                card.appendChild(description);
+                cardContainer.appendChild(card);
+            });
+        });
+    </script>
+</body>
+</html>

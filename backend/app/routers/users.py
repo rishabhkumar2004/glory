@@ -20,7 +20,7 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
 
 @router.post("/users/verify", response_model=UserVerifySuccess, tags=["users"])
 def verify_user_login(user: UserRequestDetails, db: Session = Depends(get_db)):
-    is_verified = crud.verify_user_login(db=db, username=user.username, password=user.password)
+    is_verified = crud.verify_user_login(db=db, email=user.email, password=user.password)
     if is_verified:
         return is_verified
     else:
